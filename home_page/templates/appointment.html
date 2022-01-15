@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    var max_fields = 2;
+    var wrapper = $(".container1");
+    var add_button = $(".add_form_field");
+
+    var x = 1;
+    $(add_button).click(function(e) {
+        e.preventDefault();
+        if (x < max_fields) {
+            x++;
+            $(wrapper).append('<div><input type="text" name="pname_two"/><svg xmlns="http://www.w3.org/2000/svg" width="5%" height="5%" fill="currentColor" class="delete bi bi-dash-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/></svg></div>'); //add input box
+        } else {
+            alert('Only two pets can be booked at the same time.')
+        }
+    });
+
+    $(wrapper).on("click", ".delete", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+    })
+});
+    </script> -->
+</head>
+
+<body>
+    <div class="box-container">
+        <!-- <nav class="navbar-main">
+        <div id="sandia-logo">
+            <a class="logo-home" href="/">Sandia Animal Hospital</a>
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="appointment">Book an Appointment</a>
+            <a href="about">About Sandia</a>
+        </div>
+    </nav> -->
+
+        <nav class="navbar-main">
+            <div id="sandia-logo">
+                <a class="logo-home" href="/">Sandia Animal Hospital</a>
+            </div>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Book an Appointment
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="appointment">Book Appointment</a>
+                        <a href="booking_login">View or Modify Appointment</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About Sandia
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="about">Our Services</a>
+                        <a href="drsandia">Meet Dr. Sandia</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Form -->
+        <div class="form-container">
+            <h3 class="text-center">Book an Appointment</h3>
+            <a href="/booking_login">
+                <p class="text-center" style="font-size: smaller;">Need to modify your appointment? Click here.</p>
+            </a>
+            <p class="text-center">Please enter your preferred date and time for your pet's appointment. Although we
+                can't guarantee a place for you during your chosen appointment period, we will do our best to do so. You
+                will receive a confirmation email within 24 hours of setting up the appointment. </p>
+            {% if messages %}
+            <ul class="messages" style="list-style: none; color:#cc0000; text-align:center; margin-top:1%">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/process_appointment" method="post">
+                {% csrf_token %}
+                <div class="form-row xxs-margin-t">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="fname">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="lname">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="pname">Pet's Name</label>
+                    </div>
+                    <div class="col-75 container1">
+                        <div><input type="text" name="pname"></div>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="preferred_date">Preferred Date</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="preferred_date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="preferred_time">Preferred Time</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="preferred_time">
+                            <option value="morning">Morning (7:30 AM - 11:00 AM)</option>
+                            <option value="afternoon">Afternoon (11:00 AM - 3:30 PM)</option>
+                            <option value="early_evening">Early Evening (4:00 PM - 6:30 PM)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        <!-- End of Form-->
+        <footer class="footer">
+            <div class="footer-column">
+                <h3 class="footer-text">Sandia Animal Hospital</h3>
+                <p class="footer-text">1234 Number Street, Suite 567</p>
+                <p class="footer-text">Albuquerque, New Mexico 89012</p>
+                <p class="footer-text">(123) 456-7890</p>
+                <p class="footer-text">info@thisisfake.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

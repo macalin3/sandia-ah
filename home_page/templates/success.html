@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booked</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+<div class="box-container">
+    <nav class="navbar-main">
+        <div id="sandia-logo">
+            <a class="logo-home" href="/">Sandia Animal Hospital</a>
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Book an Appointment
+                </button>
+                <div class="dropdown-content">
+                    <a href="appointment">Book Appointment</a>
+                    <a href="booking_login">View or Modify Appointment</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About Sandia
+                </button>
+                <div class="dropdown-content">
+                    <a href="about">Our Services</a>
+                    <a href="drsandia">Meet Dr. Sandia</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Form -->
+    <div class="form-container">
+        <h3 class="text-center">Thanks for booking with us, {{this_appt.fname}}!</h3>
+        <p class="text-center" style="font-size: smaller;">Your booking confirmation is <span style="font-weight: 800; font-size: smaller;">{{ this_appt.confirmation }}</span></p>
+        <hr class="xxs-margin-t">
+        <p class="text-center xxs-margin-t">You should receive a confirmation email within 24 hours of submitting your request. If you do not receive any after 24 hours, please contact us at (123) 456-7890.</p>
+        <div class="form-row  details xxs-padding-details xxs-margin-t">
+        <div class="form-row">
+            <p class="col-30 bold">Your Name:</p>
+            <p class="col-70">{{this_appt.fname}} {{this_appt.lname}}</p>
+        </div>
+        <div class="form-row">
+            <p class="col-30 bold">Contact Information:</p>
+            <p class="col-70">{{this_appt.phone}}</p>
+        </div>
+        <div class="form-row">
+            <p class="col-30"></p>
+            <p class="col-70">{{this_appt.email}}</p>
+        </div>
+        <div class="form-row">
+            <p class="col-30 bold">Your Pet's Name:</p>
+            <p class="col-70">{{this_appt.pname}}</p>
+        </div>
+        <div class="form-row ">
+            <p class="col-30 bold">Your Preferred Date and Time:</p>
+            <p class="col-70">{{this_appt.preferred_date}} in the
+                {% if this_appt.preferred_time == "morning" %} morning (7:30 AM - 11:00 AM)
+                {% elif this_appt.preferred_time == "afternoon" %} afternoon (11:00 AM - 3:30 PM)
+                {% elif this_appt.preferred_time == "early_evening" %} early evening (4:00 PM - 6:30 PM)
+                {% endif %}
+            </p>
+        </div>
+        </div>
+        <div class="form-row xxs-margin-t">
+            <p class="col-30"></p>
+            <p class="col-70" style="text-align: end;">
+                <a href="modify" class="mod-btn-blue">Modify Appointment</a>
+                <a href="cancel" class="mod-btn-red">Cancel Appointment</a></p>
+        </div>
+    </div>
+    <!-- End of Form-->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3 class="footer-text">Sandia Animal Hospital</h3>
+            <p class="footer-text">1234 Number Street, Suite 567</p>
+            <p class="footer-text">Albuquerque, New Mexico 89012</p>
+            <p class="footer-text">(123) 456-7890</p>
+            <p class="footer-text">info@thisisfake.com</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

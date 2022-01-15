@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Your Appointment</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+</head>
+<body>
+<div class="box-container">
+    <nav class="navbar-main">
+        <div id="sandia-logo">
+            <a class="logo-home" href="/">Sandia Animal Hospital</a>
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Book an Appointment
+                </button>
+                <div class="dropdown-content">
+                    <a href="appointment">Book Appointment</a>
+                    <a href="booking_login">View or Modify Appointment</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About Sandia
+                </button>
+                <div class="dropdown-content">
+                    <a href="about">Our Services</a>
+                    <a href="drsandia">Meet Dr. Sandia</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Form -->
+    <div class="form-container">
+        <h3 class="text-center">Modify an Appointment</h3>
+        <p class="text-center">Please enter your confirmation code and last name to view your appointment information. </p>
+        {% if messages %}
+        <ul class="messages" style="list-style: none; color:#cc0000; text-align:center; margin-top:1%">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/booking_process" method="post">
+            {% csrf_token %}
+            <div class="form-row xxs-margin-t">
+                <div class="col-25">
+                <label for="confirmation">Confirmation Code</label>
+                </div>
+                <div class="col-75">
+                <input type="text" name="confirmation">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-25">
+                <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                <input type="text" name="lname" >
+                </div>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
+    <!-- End of Form-->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3 class="footer-text">Sandia Animal Hospital</h3>
+            <p class="footer-text">1234 Number Street, Suite 567</p>
+            <p class="footer-text">Albuquerque, New Mexico 89012</p>
+            <p class="footer-text">(123) 456-7890</p>
+            <p class="footer-text">info@thisisfake.com</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

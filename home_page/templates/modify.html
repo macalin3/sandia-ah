@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Your Appointment</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+</head>
+<body>
+<div class="box-container">
+    <nav class="navbar-main">
+        <div id="sandia-logo">
+            <a class="logo-home" href="/">Sandia Animal Hospital</a>
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Book an Appointment
+                </button>
+                <div class="dropdown-content">
+                    <a href="appointment">Book Appointment</a>
+                    <a href="booking_login">View or Modify Appointment</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About Sandia
+                </button>
+                <div class="dropdown-content">
+                    <a href="about">Our Services</a>
+                    <a href="drsandia">Meet Dr. Sandia</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Form -->
+    <div class="form-container">
+        <div class="form-row">
+            <a href="success"><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#007890" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg></a>
+            <a href="success" class="back">Go Back</a>
+        </div>
+        
+        <h3 class="text-center xxs-margin-t">Modify Your Appointment</h3>
+        <p class="text-center">Need to change your appointment? Please update the fields below. </p>
+        {% if messages %}
+        <ul class="messages" style="list-style: none; color:#cc0000; text-align:center; margin-top:1%">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="form-row details xxs-padding-details xxs-margin-t">
+        <div class="form-row">
+            <p class="col-30">Your Preferred Date:</p>
+            <p class="col-70">{{this_appt.preferred_date}}</p>
+        </div>
+        <div class="form-row">
+            <p class="col-30">Your Preferred Time:</p>
+            <p class="col-70">
+                {% if this_appt.preferred_time == "morning" %}
+                    <p>Morning (7:30 AM - 11:00 AM)</p> 
+                {% elif this_appt.preferred_time == "afternoon" %}
+                    <p>Afternoon (11:00 AM - 3:30 PM)</p> 
+                {% elif this_appt.preferred_time == "early_evening" %}
+                    <p> Early Evening (4:00 PM - 6:30 PM) </p>
+                {% endif %}
+            </p>
+        </div>
+        </div>
+        <form action="/update_appt" method="post">
+            {% csrf_token %}
+            <div class="form-row xxs-margin-t">
+                <div class="col-25">
+                    <label for="preferred_date">Your Preferred Date</label>
+                </div>
+                <div class="col-75">
+                    <input type="date" name="preferred_date">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-25">
+                <label for="preferred_time">Your Preferred Time</label>
+                </div>
+                <div class="col-75">
+                    <select name="preferred_time">
+                        {% if this_appt.preferred_time == "morning" %}
+                        <option selected value="morning">Morning (7:30 AM - 11:00 AM)</option>
+                        <option value="afternoon">Afternoon (11:00 AM - 3:30 PM)</option>
+                        <option value="early_evening">Early Evening (4:00 PM - 6:30 PM)</option>
+                        {% elif this_appt.preferred_time == "afternoon" %}
+                        <option value="morning">Morning (7:30 AM - 11:00 AM)</option>
+                        <option selected value="afternoon">Afternoon (11:00 AM - 3:30 PM)</option>
+                        <option value="early_evening">Early Evening (4:00 PM - 6:30 PM)</option>
+                        {% elif this_appt.preferred_time == "early_evening" %}
+                        <option value="morning">Morning (7:30 AM - 11:00 AM)</option>
+                        <option value="afternoon">Afternoon (11:00 AM - 3:30 PM)</option>
+                        <option selected value="early_evening">Early Evening (4:00 PM - 6:30 PM)</option>
+                        {% endif %}
+                        <!-- <option value="morning">Morning (7:30 AM - 11:00 AM)</option>
+                        <option value="afternoon">Afternoon (11:00 AM - 3:30 PM)</option>
+                        <option value="early_evening">Early Evening (4:00 PM - 6:30 PM)</option> -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Update">
+            </div>
+            </form>
+        </div>
+        
+    <!-- End of Form-->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3 class="footer-text">Sandia Animal Hospital</h3>
+            <p class="footer-text">1234 Number Street, Suite 567</p>
+            <p class="footer-text">Albuquerque, New Mexico 89012</p>
+            <p class="footer-text">(123) 456-7890</p>
+            <p class="footer-text">info@thisisfake.com</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sandia Animal Hospital</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+<div class="box-container">
+    <nav class="navbar-main">
+        <div id="sandia-logo">
+            <a class="logo-home" href="/">Sandia Animal Hospital</a>
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Book an Appointment
+                </button>
+                <div class="dropdown-content">
+                    <a href="appointment">Book Appointment</a>
+                    <a href="booking_login">View or Modify Appointment</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">About Sandia
+                </button>
+                <div class="dropdown-content">
+                    <a href="about">Our Services</a>
+                    <a href="drsandia">Meet Dr. Sandia</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="form-container">
+        <h3 class="text-center xxs-margin-b">Give your pets the love and care they deserve</h3>
+        <p id="p-one" class="xs-margin-b">Sandia Animal Hospital is a new, state-of-the-art veterinary general medical practice established by Dr. Sandia with one goal in mind: offering customizable medical options based on client comfort and patient needs. We understand that every individual client has different expectations and that every patient has different needs. Set up an appointment and speak with the Sandia Animal Hospital staff about your furry family member’s needs and your situation.</p>
+        <h3 class="xxs-margin-b">Services Offered</h3>
+        <div class="form-row">
+            <div class="col-25">
+                <img src="{% static 'images/primary.jpg' %}" style="width:100%">
+            </div>
+            <div class="col-75 xs-padding-l ">
+                <h4>Primary Care</h4>
+                <p class="xxs-margin-b">Our hospital offers primary care services that cover every pet’s basic needs. These services include spays and neuters, health exams, laboratory and pharmacy services, dental care, and much more! </p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-25">
+                <img src="{% static 'images/preventive.jpg' %}" style="width:100%">
+            </div>
+            <div class="col-75 xs-padding-l ">
+                <h4>Preventive Care</h4>
+                <p class="xxs-margin-b">At SAH, we stress wellness and preventive care above all, and to help your pets get the preventive care that they need, we have created our Preventive Care Clinic. At our clinics, with your paid examination, your pet will receive all due vaccines at 50% off the regular price. Also, we'll show you the right products for your pet based on breed, lifestyle, etc. It's one of the nicest things you can do for a healthy, happy pet! Start by making an appointment today.</p>
+            </div>
+        </div>
+
+        <div class="form-row xs-margin-b ">
+            <div class="col-25">
+                <img src="{% static 'images/advanced.jpg' %}" style="width:100%">
+            </div>
+            <div class="col-75 xs-padding-l ">
+                <h4>Advanced Care</h4>
+                <p>Advanced care services go above and beyond a general hospital visit for pets. Advanced services may be items such as specialized surgeries, eye treatment, diagnostic imaging, ultrasound, or therapies.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3 class="footer-text">Sandia Animal Hospital</h3>
+            <p class="footer-text">1234 Number Street, Suite 567</p>
+            <p class="footer-text">Albuquerque, New Mexico 89012</p>
+            <p class="footer-text">(123) 456-7890</p>
+            <p class="footer-text">info@thisisfake.com</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

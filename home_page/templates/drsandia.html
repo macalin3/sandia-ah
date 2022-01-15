@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Sandia</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <div class="box-container">
+        <nav class="navbar-main">
+            <div id="sandia-logo">
+                <a class="logo-home" href="/">Sandia Animal Hospital</a>
+            </div>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Book an Appointment
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="appointment">Book Appointment</a>
+                        <a href="booking_login">View or Modify Appointment</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About Sandia
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="about">Our Services</a>
+                        <a href="drsandia">Meet Dr. Sandia</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <div class="form-container">
+            <h3 class="xxs-margin-b">Meet Dr. Sandia</h3>
+            <div class="form-row">
+                <div class="col-50">
+                    <img src="{% static 'images/vet3.jpg' %}" style="width:100%" class="shadow">
+                </div>
+                <div class="col-50 xs-padding-rl ">
+                    <p>Dr. Watermelon Sandia was born and raised in Albuquerque, NM along with two siblings and three
+                        pigs. She attended Albuquerque Fake University and graduated in 1991 with a Bachelor of Science
+                        in Animal Science. She returned to AFU to complete her Master of Science in Anatomy and
+                        Physiology, followed by her Doctorate in Veterinary Medicine, received in 2000. </p>
+
+                    <p class="xs-margin-t">
+                        During veterinary school, she completed a course on grief counseling and became certified in
+                        veterinary acupuncture. After veterinary school, she decided to stay in Albuquerque and
+                        completed a one-year internship at Fake Animal Hospital. Following her internship, in 2001, she
+                        started her practice which is now known as Sandia Animal Hospital. </p>
+                    <p class="xs-margin-t">
+                        Dr. Sandia appreciates all current clients and any potential clients that reach out to inquire.
+                        She is so excited that you chose to bring your pet to SAH and allow us to provide the very best
+                        care.
+                        SAH staff believes in a 100% satisfaction experience for you and your pet. Dr. Sandia takes
+                        extra time to ensure compliance and productivity as well as continue to educate ourselves in all
+                        aspects of small animal care.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-column">
+                <h3 class="footer-text">Sandia Animal Hospital</h3>
+                <p class="footer-text">1234 Number Street, Suite 567</p>
+                <p class="footer-text">Albuquerque, New Mexico 89012</p>
+                <p class="footer-text">(123) 456-7890</p>
+                <p class="footer-text">info@thisisfake.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

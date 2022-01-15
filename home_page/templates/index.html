@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandia Animal Hospital</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+    <div class="box-container navbar-main">
+        <!-- Navigation Bar !-->
+        <!-- <nav>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a href="appointment">Book an Appointment</a>
+                <a href="about">About Sandia</a>
+            </div>
+        </nav> -->
+        <nav>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Book an Appointment
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="appointment">Book Appointment</a>
+                        <a href="booking_login">View or Modify Appointment</a>
+                    </div>
+                </div>
+                <a href="about">About Sandia</a>
+            </div>
+        </nav>
+        
+        <img src="{% static 'images/main_dogs.jpg' %}" id="main-image" alt="Sandia Animal Hospital">
+
+        <!-- Row 1: Buttons -->
+        <div id="row-1">
+            <h1>Sandia Animal Hospital</h1>
+            <h3 class="xxs-margin-b">Give your pets the love and care they deserve</h3>
+            <div class="column">
+                <a href="/about">Our Services</a>
+            </div>
+            <div class="column">
+                <a href="/appointment">Book Appointment</a>
+            </div>
+            <div class="column">
+                <a href="#">New Pet Registration</a>
+            </div>
+        </div>
+
+        <!-- Row 2: Three entries -->
+        <div id="row-2">
+            <div class="column">
+                <div class="card ">
+                    <img src="{% static 'images/cats.jpg' %}" alt="New Pet Registration" style="width:100%">
+                    <div style="display:flex;">
+                        <span class="bold sm-padding-new" style="color:red">NEW!</span>
+                        <p class="bold">Online Pet Registration</p>
+                    </div>
+                    <p class="sm-padding-rl xs-margin-b xxs-margin-t">Do you have a new pet you need to bring in, but
+                        have a busy day ahead? Do you prefer curbside check in and not coming into the vet's office?
+                        Save time and avoid the busy office by registering your new pet online!</p>
+                    <div class="column text-center" style="width:100%;">
+                        <p><a href="#">New Pet Registration</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="{% static 'images/guinea_pigs.jpg' %}" alt="Learn About Our Services" style="width:100%">
+                    <p class="bold sm-padding-rl">Learn About Our Services</p>
+                    <p class="sm-padding-rl xs-margin-b xxs-margin-t">Finding the best care for your pet is no easy
+                        task. Like humans, your pets should also get the appropriate services they need. Sandia Animal
+                        Hospital offers many veterinary services for your pet!</p>
+                    <div class="column text-center" style="width:100%;">
+                        <p><a href="/about">Learn About Services</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="{% static 'images/vet.jpg' %}" alt="Meet Dr. Sandia" style="width:100%">
+                    <p class="bold sm-padding-rl">Read About Dr. Sandia</p>
+                    <p class="sm-padding-rl  xs-margin-b xxs-margin-t">Dr. Sandia started this practice nearly ten years
+                        ago. Not only has she grown her clientele, but she has also made lifelong furry friends. She has
+                        always loved animals and growing up didn't stop her from feeling the same.</p>
+                    <div class="column text-center" style="width:100%;">
+                        <p><a href="/drsandia">Read About Dr. Sandia</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Why choose Sandia? -->
+        <div id="row-3">
+            <h1 class="text-center sm-margin-b">Why Choose Sandia Animal Hospital?</h1>
+            <div class="column">
+                <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="#252526"
+                        class="bi bi-gem" viewBox="0 0 16 16">
+                        <path
+                            d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z" />
+                    </svg></p>
+                <h3 class="bold sm-padding-rl text-center">State of the Art Facilities</h3>
+                <p class="sm-padding-rl text-center">Our recently renovated building boasts new equipment from generous
+                    donors. Let's find thebest solutions for your pet's troubles!</p>
+            </div>
+            <div class="column">
+                <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="#252526"
+                        class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                    </svg></p>
+                <h3 class="bold sm-padding-rl text-center">Convenience</h3>
+                <p class="sm-padding-rl text-center">Book an appointment or register your pet online. Save time and
+                    complete any necessary forms online!</p>
+            </div>
+            <div class="column">
+                <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="#252526"
+                        class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                        <path
+                            d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
+                    </svg></p>
+                <h3 class="bold sm-padding-rl text-center">Affordable Prices</h3>
+                <p class="sm-padding-rl text-center">Our prices are carefully considered by Dr. Sandia and these are the
+                    best prices you'll see. Need a payment plan? Don't worry, we offer those too!</p>
+            </div>
+        </div>
+        <!-- Row 4: Hours of operation and Google Map -->
+        <div id="row-4">
+            <div class="map-column-1">
+                <h3 class="text-center sm-margin-b">Hours of Operation</h3>
+                <table>
+                    <tr>
+                        <td>Sunday:</td>
+                        <td>CLOSED</td>
+                    </tr>
+                    <tr>
+                        <td>Monday:</td>
+                        <td>7:30 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday:</td>
+                        <td>7:30 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday:</td>
+                        <td>7:30 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday:</td>
+                        <td>7:30 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday:</td>
+                        <td>7:30 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday:</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                    </tr>
+                </table>
+                <p class="xxs-margin-t footer-text">For emergencies outside of business hours, please call the Emergency
+                    Hotline at (098) 765-4321.</p>
+                <p class="bold xxs-margin-t footer-text">Due to COVID-19, we are requiring our guests who opt to drop
+                    off their pets inside to wear masks inside the premises regardless of vaccination status.</p>
+                <p class="xxs-margin-t footer-text"><a
+                        href="https://www.cdc.gov/media/releases/2021/s1227-isolation-quarantine-guidance.html">Click
+                        here to read about the CDC's statement about masks.</a></p>
+            </div>
+            <div class="map-column-2 sm-padding-rl">
+                <h3 class="text-center ">Find Us on Google</h3>
+                <div id="googleMap" class="xxs-margin-t" style="width:100%; height:400px;"></div>
+                <script>
+                    function myMap() {
+                        var mapProp = {
+                            center: new google.maps.LatLng(35.1607492181581, -106.5683938227091),
+                            zoom: 15,
+                        };
+                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key={{google_map_api}}&callback=myMap"></script>
+            </div>
+        </div>
+        <!-- Row 5: Footer -->
+        <footer id="row-5">
+            <div class="footer-column">
+                <h3 class="footer-text">Sandia Animal Hospital</h3>
+                <p class="footer-text">1234 Number Street, Suite 567</p>
+                <p class="footer-text">Albuquerque, New Mexico 89012</p>
+                <p class="footer-text">(123) 456-7890</p>
+                <p class="footer-text">info@thisisfake.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
