@@ -93,6 +93,8 @@ body {
     position: relative;
 }
 
+/* Navigation Bar */
+
 .navbar {
     width: 100%;
     overflow: hidden;
@@ -114,7 +116,6 @@ body {
 .navbar a:hover {
     background-color: #901800;
 }
-
 
 .dropdown {
     float: left;
@@ -162,6 +163,9 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Columns */
+
 .column {
     float: left;
     width: 33%;
@@ -169,7 +173,6 @@ body {
     
 }
 
-/* Links to the other pages. */
 .column a {
     background-color: white;
     color: #007890;
@@ -181,7 +184,6 @@ body {
     display: inline-block; 
 }
 
-/* What happens when you hover on the links. */
 .column a:hover{
     color: white;
     background-color: #007890;
@@ -216,17 +218,20 @@ body {
     text-align: center;
 }
 
-.bold {
-    font-weight: bolder;
-}
-
+/* Formatting */ 
 .footer-text {
     font-size: small;
+}
+
+.bold {
+    font-weight: bolder;
 }
 
 .text-center {
     text-align: center;
 }
+
+/* Margins & Padding */
 
 .sm-padding-rl {
     padding: 0 4%;
@@ -268,7 +273,7 @@ body {
 }
     
 @media screen and (max-width: 600px) {
-    .column,.map-column-1, .map-column-2, .footer-column   {
+    .column,.map-column-1, .map-column-2, .footer-column {
         width: 100%;
         display: block;
         margin-bottom: 2%;
