@@ -14,16 +14,8 @@
 </head>
 
 <body>
-    <div class="box-container navbar-main">
-        <!-- Navigation Bar !-->
-        <!-- <nav>
-            <div class="navbar">
-                <a href="/">Home</a>
-                <a href="appointment">Book an Appointment</a>
-                <a href="about">About Sandia</a>
-            </div>
-        </nav> -->
-        <nav>
+    <div class="box-container ">
+        <nav class="navbar-main">
             <div class="navbar">
                 <a href="/">Home</a>
                 <div class="dropdown">
@@ -34,13 +26,21 @@
                         <a href="booking_login">View or Modify Appointment</a>
                     </div>
                 </div>
-                <a href="about">About Sandia</a>
+                <div class="dropdown">
+                    <button class="dropbtn">About Sandia
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="about">Our Services</a>
+                        <a href="drsandia">Meet Dr. Sandia</a>
+                    </div>
+                </div>
             </div>
         </nav>
-        
+
         <img src="{% static 'images/main_dogs.jpg' %}" id="main-image" alt="Sandia Animal Hospital">
 
         <!-- Row 1: Buttons -->
+
         <div id="row-1">
             <h1>Sandia Animal Hospital</h1>
             <h3 class="xxs-margin-b">Give your pets the love and care they deserve</h3>
@@ -61,8 +61,8 @@
                 <div class="card ">
                     <img src="{% static 'images/cats.jpg' %}" alt="New Pet Registration" style="width:100%">
                     <div style="display:flex;">
-                        <span class="bold sm-padding-new" style="color:red">NEW!</span>
-                        <p class="bold">Online Pet Registration</p>
+                        <span class="bold sm-padding-new xxs-margin-t" style="color:red">NEW!</span>
+                        <p class="bold xxs-margin-t">Online Pet Registration</p>
                     </div>
                     <p class="sm-padding-rl xs-margin-b xxs-margin-t">Do you have a new pet you need to bring in, but
                         have a busy day ahead? Do you prefer curbside check in and not coming into the vet's office?
@@ -75,7 +75,7 @@
             <div class="column">
                 <div class="card">
                     <img src="{% static 'images/guinea_pigs.jpg' %}" alt="Learn About Our Services" style="width:100%">
-                    <p class="bold sm-padding-rl">Learn About Our Services</p>
+                    <p class="bold sm-padding-rl xxs-margin-t">Learn About Our Services</p>
                     <p class="sm-padding-rl xs-margin-b xxs-margin-t">Finding the best care for your pet is no easy
                         task. Like humans, your pets should also get the appropriate services they need. Sandia Animal
                         Hospital offers many veterinary services for your pet!</p>
@@ -87,7 +87,7 @@
             <div class="column">
                 <div class="card">
                     <img src="{% static 'images/vet.jpg' %}" alt="Meet Dr. Sandia" style="width:100%">
-                    <p class="bold sm-padding-rl">Read About Dr. Sandia</p>
+                    <p class="bold sm-padding-rl xxs-margin-t">Read About Dr. Sandia</p>
                     <p class="sm-padding-rl  xs-margin-b xxs-margin-t">Dr. Sandia started this practice nearly ten years
                         ago. Not only has she grown her clientele, but she has also made lifelong furry friends. She has
                         always loved animals and growing up didn't stop her from feeling the same.</p>
@@ -190,6 +190,7 @@
             </div>
         </div>
         <!-- Row 5: Footer -->
+
         <footer id="row-5">
             <div class="footer-column">
                 <h3 class="footer-text">Sandia Animal Hospital</h3>

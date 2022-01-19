@@ -305,6 +305,37 @@ input[type=submit]:hover {
 }
 
   /* Stacking columns on top of each other (responsive) */
+@media screen and (max-width: 768px) {
+    .col-25, .col-30, .col-50, .col-70, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    }
+
+    .mod-btn-red, .mod-btn-blue {
+        width: 100%;
+        margin-top: 3%;
+    }
+
+    #p-one {
+        margin-top: 3%;
+        text-align: center;
+    }
+
+    #sandia-logo {
+        display: none;
+    }
+
+    .form-container {
+        padding: 3%;
+        width: 90%;
+    }
+
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .col-25, .col-30, .col-50, .col-70, .col-75, input[type=submit] {
     width: 100%;
