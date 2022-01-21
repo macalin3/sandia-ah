@@ -7,6 +7,9 @@ Notes:
     <ul>
       <li>Future update will include the ability to validate the date to ensure that appointments can't be scheduled past 90 days from the present date.</li>
     </ul>
-  <li>At this time, the "New Pet Registration" link is inactive. Future updates of this repository will include an updated New Pet Registration link where you can register your pets with Sandia Animal Hospital.</li>
+  <li>At this time, the "New Pet Registration" link is inactive. Future update of this repository will include an updated New Pet Registration link where you can register your pets with Sandia Animal Hospital.</li>
   <li>Desktop and mobile views have been setup, but tablet views will be updated in a future commit.</li>
+    <ul>
+      <li>One of the issues I found in this version is when zooming out, everything <b>but the images</b> zoom out.</li>
+    </ul>
 </ul>
