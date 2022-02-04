@@ -115,3 +115,6 @@ def booking_process(request):
     else:
         messages.error(request, "All fields are required.")
         return redirect("/booking_login")
+
+def show_registration(request):
+    return render(request, "registration.html")

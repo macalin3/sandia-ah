@@ -1,7 +1,7 @@
 from django.db import models
+from localflavor.us.forms import USStateField
+
 import re
-
-
 
 class AppointmentManager(models.Manager):
     def basic_validator(self,postData):
@@ -50,3 +50,16 @@ class Appointment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = AppointmentManager()
+
+
+class UserPet(models.Model):
+    fname = models.CharField(max_length=20)
+    lname = models.CharField(max_length=20)
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=10)
+    address = models.EmailField(max_length=100)
+    address2 = models.EmailField(max_length=100)
+    city = models.EmailField(max_length=50)
+    state = USStateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

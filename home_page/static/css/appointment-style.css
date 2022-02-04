@@ -111,6 +111,10 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.flex {
+    display: flex;
+}
+
 /* Column sizes */
 
 .col-25 {
@@ -169,6 +173,12 @@ input[type=text], select, textarea, [type=date] {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+}
+
+.vl {
+    border-left: 3px solid green;
+    height: 50px;
+    margin: 10px 0 10px 7px;
 }
 
 label {

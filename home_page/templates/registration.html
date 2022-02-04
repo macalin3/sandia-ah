@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/watermelon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/appointment-style.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="box-container">
+        <nav class="navbar-main">
+            <div id="sandia-logo">
+                <a class="logo-home" href="/">Sandia Animal Hospital</a>
+            </div>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Book an Appointment
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="appointment">Book Appointment</a>
+                        <a href="booking_login">View or Modify Appointment</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About Sandia
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="about">Our Services</a>
+                        <a href="drsandia">Meet Dr. Sandia</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <div class="form-container flex">
+        <div class="progress">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            </svg>
+
+            <div class="vl"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            </svg>
+
+            <div class="vl"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            </svg>
+        </div>
+        <div class="form-one">
+            <h1>Client Information</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-row xxs-margin-t">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="fname">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="lname">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="phone">Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="phone">Address 2</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-25">
+                        <label for="phone">City</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="phone">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
